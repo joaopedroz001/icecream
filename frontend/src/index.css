@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: 'Joti One';
+  src: url('fonts/JOTIONE-REGULAR.TTF') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/INTER.TTC') format('truetype');
+}
+
+
+* {
+  min-width: 0;
+}
+
+body {
+  font-family: 'Inter';
+}
+
+.titleLogo {
+  -webkit-text-stroke: 20px;
+  -webkit-text-stroke-color: black;
+  paint-order: stroke fill;
+}
