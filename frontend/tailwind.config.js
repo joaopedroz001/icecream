@@ -9,10 +9,6 @@ export default {
       fontFamily: {
         titleLogo: 'Joti One',
       },
-      borderRadius: {
-        login: '0 120px 120px 0',
-        signup: '120px 0 0 120px'
-      }
     },
   },
   plugins: [],
