@@ -1,8 +1,6 @@
 import { UserCircle } from "lucide-react"
-import { useLocation } from "react-router-dom"
 
 export function LandingPage() {
-  const location = useLocation().pathname
   
   return (
     <div className="flex flex-col items-center">
