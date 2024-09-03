@@ -46,3 +46,25 @@ body {
     z-index: 10;
   }
 }
+
+.underline-effect {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.underline-effect::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.underline-effect:hover::after {
+  width: 100%;
+  left: 0;
+}
