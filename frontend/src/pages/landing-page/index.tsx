@@ -1,14 +1,30 @@
 import { UserCircle } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export function LandingPage() {
-  
+  window.onload = function() {
+    if (window.location.hash) {
+      const element = document.getElementById(window.location.hash.substring(1))
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+
+  function goToAnchorSmoothly() {
+    const element = document.getElementById('where-we-are');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <div className="flex flex-col items-center">
       <div className="h-28 bg-indigo-950 flex px-56 items-center justify-between w-full">
         <ul className="flex justify-between gap-10">
-          <li className="font-medium text-2xl text-white underline-effect border-b-2"><a href="/">Início</a></li>
-          <li className="font-medium text-2xl text-white underline-effect"><a href="#">Sorveteria</a></li>
-          <li className="font-medium text-2xl text-white underline-effect"><a href="#where-we-are">Onde estamos?</a></li>
+          <li className="font-medium text-2xl text-white underline-effect border-b-2"><Link to={'/'}>Início</Link></li>
+          <li className="font-medium text-2xl text-white underline-effect"><Link to={'/store'}>Sorveteria</Link></li>
+          <li className="font-medium text-2xl text-white underline-effect"><a onClick={goToAnchorSmoothly}>Onde estamos?</a></li>
         </ul>
         <UserCircle className="text-white cursor-pointer" size={30}/>
       </div>
@@ -39,7 +55,7 @@ export function LandingPage() {
                 <img src="img/açaí.png" alt="" />
               </div>
               <div className="bg-indigo-950 w-full rounded-b-3xl text-center h-28">
-                <p className="font-titleLogo text-white text-2xl leading-normal">açaís a partir de <br/><span className="text-[40px]">R$16,00</span></p>
+                <p className="font-titleLogo text-white text-2xl leading-normal">Açaís a partir de <br/><span className="text-[40px]">R$16,00</span></p>
               </div>
             </div>
 
@@ -48,7 +64,7 @@ export function LandingPage() {
                 <img src="img/sorvete.png" alt="" className="w-4/5" />
               </div>
               <div className="bg-indigo-950 w-full rounded-b-3xl text-center h-28">
-                <p className="font-titleLogo text-white text-2xl leading-normal">sorvetes a partir de <br/><span className="text-[40px]">R$5,00</span></p>
+                <p className="font-titleLogo text-white text-2xl leading-normal">Sorvetes a partir de <br/><span className="text-[40px]">R$5,00</span></p>
               </div>
             </div>
 
@@ -57,7 +73,7 @@ export function LandingPage() {
                 <img src="img/picolé.png" alt="" className="w-3/5"/>
               </div>
               <div className="bg-indigo-950 w-full rounded-b-3xl text-center h-28">
-                <p className="font-titleLogo text-white text-2xl leading-normal">picolés a partir de <br/><span className="text-[40px]">R$2,50</span></p>
+                <p className="font-titleLogo text-white text-2xl leading-normal">Picolés a partir de <br/><span className="text-[40px]">R$2,50</span></p>
               </div>
             </div>
           </div>
@@ -65,12 +81,12 @@ export function LandingPage() {
       </main>
 
       <div id="where-we-are" className="w-full flex flex-col gap-20">
-          <h2 className="font-titleLogo text-8xl leading-tight text-center">Onde estamos?</h2>
-          
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.9598487823832!2d-43.94144772401451!3d-19.926096738188463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699e6ccb6abb1%3A0x28697dfb766a34c!2sAv.%20%C3%81lvares%20Cabral%2C%20400%20-%20Centro%2C%20Belo%20Horizonte%20-%20MG%2C%2030170-001!5e0!3m2!1spt-BR!2sbr!4v1725319159658!5m2!1spt-BR!2sbr"
-            className="w-full h-[700px]">
-          </iframe>
+        <h2 className="font-titleLogo text-8xl leading-tight text-center">Onde estamos?</h2>
+        
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.9598487823832!2d-43.94144772401451!3d-19.926096738188463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699e6ccb6abb1%3A0x28697dfb766a34c!2sAv.%20%C3%81lvares%20Cabral%2C%20400%20-%20Centro%2C%20Belo%20Horizonte%20-%20MG%2C%2030170-001!5e0!3m2!1spt-BR!2sbr!4v1725319159658!5m2!1spt-BR!2sbr"
+          className="w-full h-[700px]">
+        </iframe>
       </div>
 
       <div className="bg-indigo-950 h-48 w-full flex flex-col justify-center items-center gap-8">

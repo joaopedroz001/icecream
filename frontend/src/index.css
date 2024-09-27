@@ -64,7 +64,22 @@ body {
   transition: width 0.4s ease, left 0.4s ease;
 }
 
+.underline-effect.active::after {
+  width: 100%;
+  left: 0;
+}
 .underline-effect:hover::after {
   width: 100%;
   left: 0;
+}
+
+.order-button {
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.cardText {
+  text-wrap: wrap;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

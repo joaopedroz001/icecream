@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import { LogInPage } from "./pages/login-page";
 import { LandingPage } from "./pages/landing-page";
+import { StorePage } from "./pages/store-page";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage />,
+  },
+  {
+    path: "/store",
+    element: <StorePage />
   }
 ]);
 
